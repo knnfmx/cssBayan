@@ -35,6 +35,7 @@ body {
   align-items: center;
   justify-content: space-between;
   font-size: 2rem;
+  line-height: 1.5rem;
   font-weight: 500;
   cursor: pointer;
   color: #000;
@@ -47,6 +48,7 @@ body {
 }
 
 .label-icon {
+  display: none;
   width: 1.5rem;
   height: 1.5rem;
   background: center url(assets/icons/icons8-multiply-64.png);
@@ -96,6 +98,10 @@ body {
   .accordion__memes-list:hover .accordion__item {
     background-color: #fff;
   }
+
+  .accordion__memes-list:hover .label-icon {
+    display: block;
+  }
   
   .accordion__item:hover .accordion__label {
     color: #0259cb;
@@ -117,6 +123,9 @@ body {
   .accordion__label {
     font-size: 1.5rem;
     padding: 1em 2.7em;
+  }
+  .label-icon {
+    display: block;
   }
   .content-text {
     font-size: 1.5rem;
