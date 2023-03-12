@@ -10,8 +10,8 @@ body {
 }
 
 .accordion {
-  margin: 10em auto;
-  width: 70%;
+  margin: 2em auto;
+  width: 50%;
 }
 
 .accordion__title {
@@ -21,6 +21,7 @@ body {
   margin-bottom: 1em;
   color: #fff;
 }
+
 .accordion__item  {
   list-style: none;
   width: 100%;
@@ -42,16 +43,7 @@ body {
   transition: all .5s;
 }
 
-.accordion__item:hover {
-  background-color: #e4e4e4;
-}
-.accordion__item:hover .accordion__label {
-  color: #00275a;
-  cursor: pointer;
-}
-.accordion__item:hover .content {
-  color: #00275a;
-}
+
 
 .accordion__input {
   display: none;
@@ -67,6 +59,9 @@ body {
 }
 
 .content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   line-height: 2rem;
   max-height: 0;
   overflow: hidden;
@@ -78,7 +73,8 @@ body {
   padding: 0 1em;
 }
 .content-image  {
-  width: 100%;
+  width: 80%;
+  transition: all .5s;
 }
 
 .accordion__input:checked ~ .content {
@@ -89,12 +85,27 @@ body {
   transform: rotate(0deg);
 }
 
-
-
-
+@media (hover: hover) {
+  .accordion__memes-list:hover .accordion__item {
+    background-color: #fff;
+  }
+  
+  .accordion__item:hover .accordion__label {
+    color: #0259cb;
+  }
+  .accordion__item:hover .content {
+    color: #0259cb;
+  }
+  .accordion__item:hover .content-image {
+    width: 85%;
+  }
+}
 
 
 @media (max-width: 1180px) {
+  .accordion {
+    width: 70%;
+  }
   .accordion__title {
     font-size: 2rem;
     margin-bottom: 0.5em;
@@ -109,6 +120,9 @@ body {
 
 
 @media (max-width: 568px) {
+  .accordion {
+    width: 90%;
+  }
   .accordion__title {
     font-size: 1.5rem;
     margin-bottom: 0.5em;
@@ -118,5 +132,8 @@ body {
   }
   .content-text {
     font-size: 1rem;
+  }
+  .content-image {
+    width: 100%;
   }
 }
