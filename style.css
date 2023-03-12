@@ -26,7 +26,7 @@ body {
   list-style: none;
   width: 100%;
   background-color: #badfff;
-  margin-bottom: 1em;
+  border-bottom: 0.2em solid #00275a;
 }
 
 
