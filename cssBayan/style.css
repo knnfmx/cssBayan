@@ -1,0 +1,236 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --background-color: #00275a;
+  --app-title-color: #fff;
+  --accordion-item-color: #badfff;
+  --accordion-item-color-hover: #fff;
+  --accordion-item-color-checked: #fff;
+  --accordion-item-shadow-checked: #95c7ff;
+  --meme-text-color: #000;
+  --meme-text-color-hover: #0259cb;
+  --meme-text-color-active: #3c4046;
+  --meme-text-color-checked: #00275a;
+}
+
+body {
+  background-color: var(--background-color);
+  font-family: 'Bangers', cursive;
+}
+
+
+.accordion {
+  margin: 2em auto;
+  width: 50%;
+}
+
+.accordion__title {
+  font-size: 2.7rem;
+  letter-spacing: 0.1rem;
+  text-align: center;
+  margin-bottom: 1em;
+  color: var(--app-title-color);
+}
+
+.accordion__item  {
+  list-style: none;
+  width: 100%;
+  border-radius: 5%;
+  margin-bottom: 0.4em;
+  background-color: var(--accordion-item-color);
+  cursor: pointer;
+}
+
+
+.accordion__label {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  justify-content: space-between;
+  border-radius: 5%;
+  font-size: 2rem;
+  line-height: 1.5rem;
+  font-weight: 500;
+  color: var(--meme-text-color);
+  padding: 1em 1.5em;
+  transition: all .5s;
+  cursor: pointer;
+}
+
+.meme-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  line-height: 2em;
+  font-size: 2rem;
+}
+
+.accordion__input {
+  display: none;
+}
+
+.label-icon {
+  display: none;
+  width: 1.5rem;
+  height: 1.5rem;
+  background: center url(assets/icons/icons8-multiply-64.png);
+  background-size: contain;
+  transform: rotate(45deg);
+  transition: all .5s;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-height: 0;
+  width: 100%;
+  line-height: 2rem;
+  overflow: hidden;
+  transition: all .5s;
+}
+
+.content-text {
+  font-size: 2rem;
+  padding: 0 1em;
+  margin-bottom: 0.5em;
+}
+.content-image  {
+  width: 100%;
+  transition: all .5s;
+}
+
+.accordion__input:checked ~ .accordion__label > .content {
+  max-height: 50rem;
+  color: var(--meme-text-color-checked);
+  background-color: var(--accordion-item-color-checked);
+}
+
+.accordion__input:checked ~ .accordion__label > .meme-title > .label-icon {
+  transform: rotate(0deg);
+}
+
+.accordion__input:checked + .accordion__label {
+  color: var(--meme-text-color-checked);
+  background-color: var(--accordion-item-color-checked);
+  box-shadow: 0 0 0.3em var(--accordion-item-shadow-checked);
+}
+
+
+@media (hover: hover) {
+  .accordion__memes-list:hover .accordion__item {
+    background-color: var(--accordion-item-color-hover);
+  }
+
+  .accordion__memes-list:hover .label-icon {
+    display: block;
+  }
+  
+
+  .accordion__item:hover > .accordion__label > .meme-title > .label-icon {
+    transform: rotate(0deg);
+  }
+
+  .accordion__item:hover > .accordion__label > .content {
+    max-height: 50rem;
+    color: var(--meme-text-color-hover);
+    background-color:var(--accordion-item-color-hover);
+  }
+
+  .accordion__item:hover > .accordion__label {
+    color: var(--meme-text-color-hover);
+  }
+
+
+
+  .accordion__item:active > .accordion__label {
+    color: var(--meme-text-color-active);
+  }
+  .accordion__item:active > .accordion__label > .meme-title > .label-icon {
+    transform: rotate(180deg);
+  }
+  .accordion__item:active > .accordion__label > .content {
+    color: var(--meme-text-color-active);
+  }
+  .accordion__item:active > .accordion__label > .content > .content-image {
+    filter: opacity(0.8);
+  }
+  
+}
+
+
+@media (max-width: 1440px) {
+  .accordion {
+    width: 70%;
+  }
+  .accordion__title {
+    font-size: 2.3rem;
+    margin-bottom: 0.5em;
+  }
+  .accordion__label {
+    font-size: 1.7rem;
+    padding: 1em 2.7em;
+  }
+  .label-icon {
+    display: block;
+  }
+  .meme-title {
+    font-size: 1.7rem;
+  }
+  .content-text {
+    font-size: 1.7rem;
+  }
+}
+
+@media (max-width: 1180px) {
+  .accordion {
+    width: 80%;
+  }
+  .accordion__title {
+    font-size: 2rem;
+    margin-bottom: 0.5em;
+  }
+  .accordion__label {
+    font-size: 1.5rem;
+    padding: 1em;
+  }
+  .label-icon {
+    display: block;
+  }
+  .meme-title {
+    font-size: 1.5rem;
+  }
+  .content-text {
+    font-size: 1.5rem;
+  }
+}
+
+
+@media (max-width: 568px) {
+  .accordion {
+    width: 90%;
+  }
+  .accordion__title {
+    font-size: 1.5rem;
+    margin-bottom: 0.5em;
+  }
+  .accordion__label {
+    font-size: 1rem;
+    padding: 1em;
+  }
+  .meme-title {
+    font-size: 1rem;
+  }
+  .content-text {
+    font-size: 1rem;
+  }
+  .content-image {
+    width: 100%;
+  }
+}
