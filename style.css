@@ -103,6 +103,16 @@ body {
     display: block;
   }
   
+  .accordion__item:hover > .accordion__label > .label-icon {
+    transform: rotate(0deg);
+  }
+
+  .accordion__item:hover .content {
+    max-height: 50rem;
+    color: #0259cb;
+    background-color: #fff;
+  }
+
   .accordion__item:hover .accordion__label {
     color: #0259cb;
   }
