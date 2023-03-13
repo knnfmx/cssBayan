@@ -119,6 +119,18 @@ body {
   .accordion__item:hover .content {
     color: #0259cb;
   }
+
+  .accordion__input:active ~ .accordion__label {
+    color: #00275a;
+  }
+  
+  .accordion__input:active ~ .content {
+    color: #00275a;
+  }
+  .accordion__input:active ~ .content > .content-image {
+    filter: opacity(0.8);
+  }
+
 }
 
 
