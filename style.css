@@ -27,6 +27,7 @@ body {
   width: 100%;
   background-color: #badfff;
   border-bottom: 0.2em solid #00275a;
+  cursor: pointer;
 }
 
 
@@ -120,14 +121,14 @@ body {
     color: #0259cb;
   }
 
-  .accordion__input:active ~ .accordion__label {
+  .accordion__item:active > .accordion__label {
     color: #00275a;
   }
   
-  .accordion__input:active ~ .content {
+  .accordion__item:active > .content {
     color: #00275a;
   }
-  .accordion__input:active ~ .content > .content-image {
+  .accordion__item:active > .content > .content-image {
     filter: opacity(0.8);
   }
 
