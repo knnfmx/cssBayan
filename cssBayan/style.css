@@ -46,12 +46,13 @@ body {
   transition: all .5s;
 }
 
-.accordion__label > p {
+.meme-title {
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 100%;
   line-height: 2em;
+  font-size: 2rem;
 }
 
 .accordion__input {
@@ -95,7 +96,7 @@ body {
   background-color: #fff;
 }
 
-.accordion__input:checked ~ .accordion__label > p > .label-icon {
+.accordion__input:checked ~ .accordion__label > .meme-title > .label-icon {
   transform: rotate(0deg);
 }
 
@@ -115,7 +116,7 @@ body {
   }
   
 
-  .accordion__item:hover > .accordion__label > p > .label-icon {
+  .accordion__item:hover > .accordion__label > .meme-title > .label-icon {
     transform: rotate(0deg);
   }
 
@@ -139,13 +140,16 @@ body {
   .accordion__item:active > .accordion__label {
     color: #00275a;
   }
-  
+  .accordion__item:active > .accordion__label > .meme-title > .label-icon {
+    transform: rotate(180deg);
+  }
   .accordion__item:active > .accordion__label > .content {
     color: #00275a;
   }
   .accordion__item:active > .accordion__label > .content > .content-image {
     filter: opacity(0.8);
   }
+
   
 }
 
@@ -164,6 +168,9 @@ body {
   }
   .label-icon {
     display: block;
+  }
+  .meme-title {
+    font-size: 1.7rem;
   }
   .content-text {
     font-size: 1.7rem;
@@ -185,6 +192,9 @@ body {
   .label-icon {
     display: block;
   }
+  .meme-title {
+    font-size: 1.5rem;
+  }
   .content-text {
     font-size: 1.5rem;
   }
@@ -202,6 +212,9 @@ body {
   .accordion__label {
     font-size: 1rem;
     padding: 1em;
+  }
+  .meme-title {
+    font-size: 1rem;
   }
   .content {
     padding: 0 1em;
