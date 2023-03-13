@@ -15,7 +15,7 @@ body {
 }
 
 .accordion__title {
-  font-size: 2.5rem;
+  font-size: 2.7rem;
   letter-spacing: 0.1rem;
   text-align: center;
   margin-bottom: 1em;
@@ -108,16 +108,16 @@ body {
     transform: rotate(0deg);
   }
 
-  .accordion__item:hover .content {
+  .accordion__item:hover > .content {
     max-height: 50rem;
     color: #0259cb;
     background-color: #fff;
   }
 
-  .accordion__item:hover .accordion__label {
+  .accordion__item:hover > .accordion__label {
     color: #0259cb;
   }
-  .accordion__item:hover .content {
+  .accordion__item:hover > .content {
     color: #0259cb;
   }
 
@@ -131,9 +131,29 @@ body {
   .accordion__item:active > .content > .content-image {
     filter: opacity(0.8);
   }
-
+  
 }
 
+
+@media (max-width: 1440px) {
+  .accordion {
+    width: 70%;
+  }
+  .accordion__title {
+    font-size: 2.3rem;
+    margin-bottom: 0.5em;
+  }
+  .accordion__label {
+    font-size: 1.7rem;
+    padding: 1em 2.7em;
+  }
+  .label-icon {
+    display: block;
+  }
+  .content-text {
+    font-size: 1.7rem;
+  }
+}
 
 @media (max-width: 1180px) {
   .accordion {
