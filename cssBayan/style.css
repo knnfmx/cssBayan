@@ -4,10 +4,24 @@
   box-sizing: border-box;
 }
 
+:root {
+  --background-color: #00275a;
+  --app-title-color: #fff;
+  --accordion-item-color: #badfff;
+  --accordion-item-color-hover: #fff;
+  --accordion-item-color-checked: #fff;
+  --accordion-item-shadow-checked: #95c7ff;
+  --meme-text-color: #000;
+  --meme-text-color-hover: #0259cb;
+  --meme-text-color-active: #3c4046;
+  --meme-text-color-checked: #00275a;
+}
+
 body {
-  background-color: #00275a;
+  background-color: var(--background-color);
   font-family: 'Bangers', cursive;
 }
+
 
 .accordion {
   margin: 2em auto;
@@ -19,14 +33,15 @@ body {
   letter-spacing: 0.1rem;
   text-align: center;
   margin-bottom: 1em;
-  color: #fff;
+  color: var(--app-title-color);
 }
 
 .accordion__item  {
   list-style: none;
   width: 100%;
-  background-color: #badfff;
-  border-bottom: 0.2em solid #00275a;
+  border-radius: 5%;
+  margin-bottom: 0.4em;
+  background-color: var(--accordion-item-color);
   cursor: pointer;
 }
 
@@ -37,13 +52,14 @@ body {
   align-items: flex-start;
   justify-content: center;
   justify-content: space-between;
+  border-radius: 5%;
   font-size: 2rem;
   line-height: 1.5rem;
   font-weight: 500;
-  cursor: pointer;
-  color: #000;
+  color: var(--meme-text-color);
   padding: 1em 1.5em;
   transition: all .5s;
+  cursor: pointer;
 }
 
 .meme-title {
@@ -92,8 +108,8 @@ body {
 
 .accordion__input:checked ~ .accordion__label > .content {
   max-height: 50rem;
-  color: #0259cb;
-  background-color: #fff;
+  color: var(--meme-text-color-checked);
+  background-color: var(--accordion-item-color-checked);
 }
 
 .accordion__input:checked ~ .accordion__label > .meme-title > .label-icon {
@@ -101,14 +117,15 @@ body {
 }
 
 .accordion__input:checked + .accordion__label {
-  color: #0259cb;
-  background-color: #fff;
+  color: var(--meme-text-color-checked);
+  background-color: var(--accordion-item-color-checked);
+  box-shadow: 0 0 0.3em var(--accordion-item-shadow-checked);
 }
 
 
 @media (hover: hover) {
   .accordion__memes-list:hover .accordion__item {
-    background-color: #fff;
+    background-color: var(--accordion-item-color-hover);
   }
 
   .accordion__memes-list:hover .label-icon {
@@ -122,34 +139,28 @@ body {
 
   .accordion__item:hover > .accordion__label > .content {
     max-height: 50rem;
-    color: #0259cb;
-    background-color: #fff;
+    color: var(--meme-text-color-hover);
+    background-color:var(--accordion-item-color-hover);
   }
-
-
 
   .accordion__item:hover > .accordion__label {
-    color: #0259cb;
-  }
-  .accordion__item:hover > .content {
-    color: #0259cb;
+    color: var(--meme-text-color-hover);
   }
 
 
 
   .accordion__item:active > .accordion__label {
-    color: #00275a;
+    color: var(--meme-text-color-active);
   }
   .accordion__item:active > .accordion__label > .meme-title > .label-icon {
     transform: rotate(180deg);
   }
   .accordion__item:active > .accordion__label > .content {
-    color: #00275a;
+    color: var(--meme-text-color-active);
   }
   .accordion__item:active > .accordion__label > .content > .content-image {
     filter: opacity(0.8);
   }
-
   
 }
 
@@ -179,7 +190,7 @@ body {
 
 @media (max-width: 1180px) {
   .accordion {
-    width: 70%;
+    width: 80%;
   }
   .accordion__title {
     font-size: 2rem;
@@ -215,9 +226,6 @@ body {
   }
   .meme-title {
     font-size: 1rem;
-  }
-  .content {
-    padding: 0 1em;
   }
   .content-text {
     font-size: 1rem;
